@@ -86,20 +86,6 @@ The project includes:
 - API: 5001
 - RabbitMQ: 5672 (AMQP), 15672 (Management UI)
 
-## Development
-
-To run the project locally:
-
-1. Update RabbitMQ connection settings in `appsettings.Development.json`
-2. Run RabbitMQ container:
-```bash
-docker-compose up rabbitmq
-```
-3. Run the application:
-```bash
-dotnet run
-```
-
 ## Architecture
 
 The project follows a three-layer architecture:
