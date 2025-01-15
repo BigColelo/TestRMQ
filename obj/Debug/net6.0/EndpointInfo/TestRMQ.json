@@ -1,0 +1,106 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TestRMQ",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/RabbitMQ/createQueue": {
+      "post": {
+        "tags": [
+          "RabbitMQ"
+        ],
+        "operationId": "crtQueue",
+        "parameters": [
+          {
+            "name": "queueName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/RabbitMQ/deleteQueue": {
+      "delete": {
+        "tags": [
+          "RabbitMQ"
+        ],
+        "operationId": "delQueue",
+        "parameters": [
+          {
+            "name": "queueName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/RabbitMQ/sendMessage": {
+      "post": {
+        "tags": [
+          "RabbitMQ"
+        ],
+        "operationId": "QueueMessage",
+        "parameters": [
+          {
+            "name": "msg",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/RabbitMQ/getMessages": {
+      "get": {
+        "tags": [
+          "RabbitMQ"
+        ],
+        "operationId": "getMessages",
+        "parameters": [
+          {
+            "name": "queueName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "maxMessages",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

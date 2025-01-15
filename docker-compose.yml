@@ -1,0 +1,35 @@
+﻿services:
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: myapp
+    ports:
+      - "5001:80"
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+    - RabbitMQ:HostName=rabbitmq
+    - RabbitMQ:Port=5672
+    - RabbitMQ:UserName=user
+    - RabbitMQ:Password=password
+    depends_on:
+      - rabbitmq
+    networks:
+      - mynetwork
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

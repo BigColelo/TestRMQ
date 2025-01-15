@@ -1,0 +1,43 @@
+{
+  "profiles": {
+    "TestRMQ": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7074;http://localhost:5001"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Container (Dockerfile)": {
+        "commandName": "Docker",
+        "launchBrowser": true,
+        "launchUrl": "http://{ServiceHost}:{ServicePort}/swagger",
+        "environmentVariables": {
+            "ASPNETCORE_URLS": "http://+:80",
+            "ApplicationUrl": "http://{ServiceHost}:{ServicePort}",
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "publishAllPorts": true,
+        "useSSL": false
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:6577",
+      "sslPort": 44302
+    }
+  }
+}
